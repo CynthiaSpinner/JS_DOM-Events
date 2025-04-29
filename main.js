@@ -6,13 +6,13 @@ document.getElementById("node1").textContent = 'I used the getElementById("node1
 
 document.getElementsByClassName("node2")[0].textContent = 'I used the getElementByClassName("node2") method to access this';
 
-document.getElementsByTagName("h3").forEach(element => {
+// Convert HTMLCollection to Array and then use forEach
+Array.from(document.getElementsByTagName("h3")).forEach(element => {
     element.textContent = 'I used the getElementByTagName("h3") method to access all of these';
 });
 
 /*----------- CREATING/APPENDING/INSERTING ELEMENTS -----------*/
 
-// Creates a paragraph and link element, appends them to a parent container, and positions them in a specific order
 const paragraph = document.createElement('p');
 paragraph.textContent = 'This node was created using the createElement() method';
 
@@ -21,6 +21,7 @@ parent.appendChild(paragraph);
 
 const link = document.createElement('a');
 link.textContent = 'I am a <a> tag';
+
 link.href = 'https://www.example.com';
 
 parent.insertBefore(link, paragraph);
@@ -41,6 +42,7 @@ newNode.remove();
 let list = [ "apples", "bananas", "carrots", "dragon fruit", "eggplant", "fish", "grapes", "honey", "ice bag", "juice (any kind)" ];
 
 const ul = document.createElement('ul');
+ul.className = 'grocery-list';
 
 list.forEach(item => {
     const li = document.createElement('li');
@@ -55,20 +57,34 @@ container.appendChild(ul);
 
 // Creates and displays a modal with a message when the button is clicked, including a close button to dismiss it
 function show() {
+    // Create modal overlay
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal-overlay';
+    
+    // Create modal content container
     const modal = document.createElement('div');
     modal.className = 'modal';
     
+    // Create modal content
     const modalContent = document.createElement('div');
     modalContent.className = 'modal-content';
     modalContent.textContent = 'Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user';
     
+    // Create close button
     const closeButton = document.createElement('button');
-    closeButton.textContent = 'Close';
-    closeButton.onclick = () => modal.remove();
-    modalContent.appendChild(closeButton);
+    closeButton.className = 'close-button';
+    closeButton.textContent = '×';
+    closeButton.onclick = () => {
+        modalOverlay.remove();
+    };
     
+    // Assemble modal
+    modal.appendChild(closeButton);
     modal.appendChild(modalContent);
-    document.body.appendChild(modal);
+    modalOverlay.appendChild(modal);
+    
+    // Add to document
+    document.body.appendChild(modalOverlay);
 }
 
 document.getElementById('btn').onclick = show;

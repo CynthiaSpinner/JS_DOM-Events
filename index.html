@@ -11,49 +11,53 @@
   <body>
     <main class="root">
       <h1>JavaScript DOM Exercises</h1>
-      <!-- Exercise #1: SELECTING/MANIPULATING ELEMENTS -->
-      <div class="exercise-container exercise1">
-        <h2>EXERCISE 1</h2>
+      <!-- SELECTING/MANIPULATING ELEMENTS -->
+      <div class="content-section">
+        <h2>Element Selection and Text Manipulation</h2>
         <p id="node1">Node #1</p>
-        <!-- Select Node #1 and change the text to: "I used the getElementById("node1") method to access this" -->
+        <!-- JavaScript will select this element by ID and change its text to: "I used the getElementById("node1") method to access this" -->
 
         <p class="node2">Node #2</p>
-        <!-- Select Node #2 and change the text to: "I used the getElementByClassName("node2") method to access this" -->
+        <!-- JavaScript will select this element by class name and change its text to: "I used the getElementByClassName("node2") method to access this" -->
         <h3>Node #3</h3>
         <h3>Node #4</h3>
         <h3>Node #5</h3>
-        <!-- Select ALL the h3 tags and change the text to: "I used the getElementByTagName("h3") method to access all of these" -->
+        <!-- JavaScript will select all h3 elements and change their text to: "I used the getElementByTagName("h3") method to access all of these" -->
       </div>
 
-      <!-- Exercise #2: CREATING/APPENDING ELEMENTS/OBJECTS -->
+      <!-- CREATING/APPENDING ELEMENTS/OBJECTS -->
       <div class="exercise-container exercise2">
-        <h2>EXERCISE 2</h2>
+        <h2>Creating and Appending New Elements</h2>
         <div id="parent"></div>
-        <!-- TODO: Create a <p> using this element.createElement() and put this text inside "I am a <p> tag" -->
-        <!-- TODO: Append the created node to the parent node using the element.appendChild() method-->
-
-        <!-- TODO: Create a <a> using this element.createElement() and put this text inside "Visit me" -->
-        <!-- TODO: Insert the created <a> after the parent but before the one you just created using the element.insertBefore() method-->
+        <!-- JavaScript will create a paragraph with text: "This node was created using the createElement() method" -->
+        <!-- JavaScript will append the paragraph to this parent div -->
+        <!-- JavaScript will create a link with text: "I am a <a> tag" and href: "https://www.example.com" -->
+        <!-- JavaScript will insert the link before the paragraph in this parent div -->
       </div>
 
-      <!-- Exercise #3: REMOVING/REPLACING ELEMENTS/OBJECTS -->
-      <div id="exercise-container3" class="exercise-container">
-        <h2>EXERCISE 3</h2>
+      <!-- REMOVING/REPLACING ELEMENTS/OBJECTS -->
+      <div id="node-manipulation" class="content-section">
+        <h2>Removing and Replacing Elements</h2>
         <p id="N1">Child Node #1</p>
+        <!-- JavaScript will remove this paragraph element -->
+        <!-- JavaScript will create and append a new paragraph with text: "I'm a new node" -->
       </div>
 
-      <!-- Exercise #4: ELEMENTS FROM AN ARRAY -->
-      <div class="exercise-container exercise4">
-        <h2>EXERCISE 4</h2>
+      <!-- ELEMENTS FROM AN ARRAY -->
+      <div class="content-section grocery-list">
+        <h2>Creating Elements from an Array</h2>
         <div id="container">
-          <!-- ADD GROCERY LIST -->
+          <!-- JavaScript will create and append grocery list items from an array -->
         </div>
       </div>
 
-      <!-- Exercise #5: DOM EVENTS -->
-      <div class="exercise-container exercise5">
-        <h2>EXERCISE 5</h2>
+      <!-- DOM EVENTS -->
+      <div class="alertUser">
+        <h2>Modal with Event Listeners</h2>
         <button id="btn">View Modal</button>
+        <!-- JavaScript will add a click event to this button to show a modal -->
+        <!-- JavaScript will create a modal with a close button -->
+        <!-- JavaScript will add functionality to close the modal -->
       </div>
     </main>
   </body>
