@@ -13,6 +13,7 @@ Array.from(document.getElementsByTagName("h3")).forEach(element => {
 
 /*----------- CREATING/APPENDING/INSERTING ELEMENTS -----------*/
 
+// Creates a paragraph and link element, appends paragraph to parent, and inserts link before paragraph
 const paragraph = document.createElement('p');
 paragraph.textContent = 'This node was created using the createElement() method';
 
@@ -37,8 +38,8 @@ oldNode.replaceWith(newNode);
 newNode.remove();
 
 /*----------- LIST ITEMS ----------- */
-// Creates an unordered list from an array of grocery items and appends it to the container
 
+// Creates an unordered list from an array of grocery items and appends it to the container
 let list = [ "apples", "bananas", "carrots", "dragon fruit", "eggplant", "fish", "grapes", "honey", "ice bag", "juice (any kind)" ];
 
 const ul = document.createElement('ul');
